@@ -27,4 +27,10 @@ test {
     // project.property() - вот здесь находится все, что вы передает через -P
     useJUnitPlatform()
     systemProperties(System.getProperties())
+    testLogging {
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
 }

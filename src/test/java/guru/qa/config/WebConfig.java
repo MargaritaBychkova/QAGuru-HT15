@@ -2,9 +2,9 @@ package guru.qa.config;
 
 import org.aeonbits.owner.Config;
 
-@Config.Sources({
-        "classpath: local.properties",
-        "classpath:remote.properties"})
+@Config.Sources(
+        {"classpath:${env}.properties"})
+
 
 public interface WebConfig extends Config {
     @Key("browser.name")
